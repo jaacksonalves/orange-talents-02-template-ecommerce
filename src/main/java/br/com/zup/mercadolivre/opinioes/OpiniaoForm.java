@@ -2,6 +2,7 @@ package br.com.zup.mercadolivre.opinioes;
 
 import br.com.zup.mercadolivre.produtos.Produto;
 import br.com.zup.mercadolivre.usuarios.Usuario;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 
@@ -12,12 +13,15 @@ public class OpiniaoForm {
 
     @NotNull
     @Range(min = 1, max = 5, message = "Nota tem que ser de 1 a 5")
+    @JsonProperty
     private int nota;
     @NotBlank
     @Length(min = 3, message = "Título deve ter ao menos 3 caracteres")
+    @JsonProperty
     private String titulo;
     @NotBlank
     @Length(max = 500, message = "Descrição pode ter no máximo 500 caracteres")
+    @JsonProperty
     private String descricao;
 
     public OpiniaoForm(@NotNull @Range(min = 1, max = 5) int nota, @NotBlank @Length(min = 3) String titulo, @NotBlank @Length(max = 500) String descricao) {
