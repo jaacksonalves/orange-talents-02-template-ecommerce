@@ -16,6 +16,9 @@ public class PerguntaForm {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public Pergunta toModel(@NotNull @Valid Produto produto, @NotNull @Valid Usuario usuario) {
         return new Pergunta(titulo, usuario, produto);
